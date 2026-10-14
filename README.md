@@ -1,1 +1,0 @@
-# La-no-meu-Quintal
