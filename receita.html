@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title id="tituloAba">Receita — Lá no meu Quintal</title>
+<meta name="description" id="metaDescricao" content="Receita de família do Lá no meu Quintal." />
+<meta name="theme-color" content="#6b1e33" />
+<link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+<a href="#receitaTopo" class="pular-conteudo">Pular para a receita</a>
+
+<header class="cabecalho">
+  <div class="container">
+    <a href="index.html" class="marca">
+      <img src="assets/logo.jpeg" alt="Logo Lá no meu Quintal" width="52" height="52" />
+      <span class="marca-nome">Lá no meu Quintal<span>BLOG DE RECEITAS</span></span>
+    </a>
+    <button class="menu-botao" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">☰</button>
+    <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="receitas.html" class="ativo">Receitas</a>
+      <a href="dicas.html">Contos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <p class="trilha"><a href="index.html">Início</a> / <a href="receitas.html">Receitas</a> / <span id="trilhaCategoria">Receita</span></p>
+  </div>
+
+  <section class="container receita-topo" id="receitaTopo" aria-live="polite">
+    <p class="sem-resultados">Carregando receita...</p>
+  </section>
+
+  <section class="container receita-conteudo" id="receitaConteudo"></section>
+
+  <nav class="container receita-navegacao" id="receitaNavegacao" aria-label="Outras receitas"></nav>
+
+  <noscript><p class="sem-resultados">Ative o JavaScript no navegador para ver a receita.</p></noscript>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <div>
+      <div class="rodape-marca">Lá no meu Quintal</div>
+      <p>Receitas de família, um prato de cada vez.</p>
+    </div>
+    <div class="rodape-links">
+      <a href="index.html">Início</a>
+      <a href="receitas.html">Receitas</a>
+      <a href="dicas.html">Contos</a>
+    </div>
+    <a href="https://www.instagram.com/lanomeuquintaloficial/" class="rodape-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre em nova aba)" title="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <p>&copy; <span id="ano">2026</span> Lá no meu Quintal. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="receitas.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

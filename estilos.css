@@ -1,0 +1,1796 @@
+/* =========================================================
+   LÁ NO MEU QUINTAL — identidade visual
+   Vinho profundo, dourado, verde-salvia e bege claro,
+   inspirados na logo da marca.
+   ========================================================= */
+
+:root {
+  --vinho: #6b1e33;
+  --vinho-escuro: #4c1524;
+  --vinho-suave: rgba(107, 30, 51, 0.08);
+  --dourado: #c8a15e;
+  --dourado-claro: #e6cd9a;
+  --salvia: #8a9a6e;
+  --salvia-escuro: #6e7d55;
+  --bege: #f3ecdd;
+  --bege-cartao: #fbf7ee;
+  --texto: #3c2b28;
+  --texto-suave: #75625c;
+  --borda: #e5d9c3;
+
+  --fonte-titulo: "Fraunces", "Georgia", serif;
+  --fonte-corpo: "Karla", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bege);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  margin: 0;
+  color: var(--vinho-escuro);
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+  background: var(--bege-cartao);
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.cabecalho .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--dourado-claro);
+}
+
+.marca-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--vinho);
+  line-height: 1.1;
+}
+
+.marca-nome span {
+  display: block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.7rem;
+  color: var(--salvia-escuro);
+  letter-spacing: 0.14em;
+  margin-top: 2px;
+}
+
+.navegacao {
+  display: flex;
+  gap: 28px;
+}
+
+.navegacao a {
+  font-size: 0.95rem;
+  color: var(--texto);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo {
+  color: var(--vinho);
+  border-color: var(--dourado);
+}
+
+.menu-botao {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--vinho);
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 72px 0 56px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--dourado);
+  margin: 28px auto 0;
+  border-radius: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.15;
+}
+
+.hero p {
+  max-width: 520px;
+  margin: 18px auto 0;
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+}
+
+/* ---------- Filtros ---------- */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.filtro-chip {
+  border: 1px solid var(--borda);
+  background: var(--bege-cartao);
+  color: var(--texto);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtro-chip:hover {
+  border-color: var(--salvia);
+}
+
+.filtro-chip.ativo {
+  background: var(--vinho);
+  border-color: var(--vinho);
+  color: var(--bege-cartao);
+}
+
+.busca {
+  max-width: 420px;
+  margin: 0 auto 8px;
+  position: relative;
+}
+
+.busca input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--borda);
+  background: var(--bege-cartao);
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  color: var(--texto);
+}
+
+.busca input:focus {
+  outline: 2px solid var(--dourado);
+  outline-offset: 1px;
+}
+
+/* ---------- Grade de receitas ---------- */
+
+.secao-receitas {
+  padding-bottom: 80px;
+}
+
+.grade-receitas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.cartao-receita {
+  background: var(--bege-cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartao-receita:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -18px rgba(76, 21, 36, 0.45);
+}
+
+.cartao-receita .cartao-imagem {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--vinho-suave);
+}
+
+.cartao-receita .cartao-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartao-corpo {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.cartao-categoria {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--salvia-escuro);
+  background: rgba(138, 154, 110, 0.14);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.cartao-corpo h3 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.cartao-corpo p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.cartao-meta {
+  margin-top: auto;
+  display: flex;
+  gap: 14px;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  padding-top: 6px;
+}
+
+.sem-resultados {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--texto-suave);
+  font-size: 1rem;
+}
+
+/* ---------- Página de receita ---------- */
+
+.trilha {
+  padding: 22px 0 0;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.trilha a {
+  color: var(--salvia-escuro);
+}
+
+.receita-topo {
+  padding: 28px 0 36px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.receita-imagem {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--borda);
+}
+
+.receita-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.receita-categoria {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--salvia-escuro);
+  background: rgba(138, 154, 110, 0.14);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.receita-info h1 {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.receita-info > p {
+  color: var(--texto-suave);
+}
+
+.receita-meta {
+  display: flex;
+  gap: 26px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--borda);
+}
+
+.receita-meta div strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  color: var(--vinho);
+  font-size: 1.05rem;
+}
+
+.receita-meta div span {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.receita-conteudo {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  padding-bottom: 70px;
+}
+
+.bloco-titulo {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.bloco-titulo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--dourado);
+  border-radius: 2px;
+}
+
+.lista-ingredientes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lista-ingredientes li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.96rem;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--borda);
+}
+
+.lista-ingredientes li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--salvia);
+}
+
+.lista-modo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: passo;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lista-modo li {
+  counter-increment: passo;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.lista-modo li::before {
+  content: counter(passo);
+  font-family: var(--fonte-titulo);
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--vinho);
+  color: var(--bege-cartao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.dica {
+  margin-top: 30px;
+  background: var(--vinho-suave);
+  border-left: 3px solid var(--dourado);
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.94rem;
+  color: var(--vinho-escuro);
+}
+
+.dica strong {
+  color: var(--vinho);
+}
+
+.bloco-dica {
+  margin-top: 30px;
+}
+
+.bloco-dica .dica {
+  margin-top: 12px;
+}
+
+.dica-vazia {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  background: var(--vinho-escuro);
+  color: var(--dourado-claro);
+  padding: 44px 0 28px;
+  margin-top: 40px;
+}
+
+.rodape .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.rodape p {
+  margin: 0;
+  color: rgba(230, 205, 154, 0.75);
+  font-size: 0.88rem;
+}
+
+.rodape-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.rodape-links a {
+  color: rgba(230, 205, 154, 0.6);
+  font-size: 0.8rem;
+  border-bottom: 1px solid transparent;
+}
+
+.rodape-links a:hover {
+  color: var(--dourado-claro);
+  border-color: var(--dourado-claro);
+}
+
+.rodape-marca {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--bege-cartao);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  .receita-topo,
+  .receita-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .receita-topo {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .navegacao {
+    position: fixed;
+    top: 77px;
+    left: 0;
+    right: 0;
+    background: var(--bege-cartao);
+    border-bottom: 1px solid var(--borda);
+    flex-direction: column;
+    padding: 16px 24px 20px;
+    gap: 14px;
+    display: none;
+  }
+
+  .navegacao.aberto {
+    display: flex;
+  }
+
+  .menu-botao {
+    display: block;
+  }
+
+  .rodape .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   Robustez, acessibilidade e extras
+   ========================================================= */
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pular-conteudo {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 50;
+  background: var(--vinho);
+  color: var(--bege-cartao);
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: top 0.15s ease;
+}
+
+.pular-conteudo:focus {
+  top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+#receitas,
+#sobre {
+  scroll-margin-top: 90px;
+}
+
+.busca input {
+  padding-right: 44px;
+}
+
+.busca-limpar {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--texto-suave);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.busca-limpar:hover {
+  background: var(--vinho-suave);
+  color: var(--vinho);
+}
+
+.busca-limpar[hidden] {
+  display: none;
+}
+
+.busca input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.filtros {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.contagem {
+  text-align: center;
+  margin: 0 0 24px;
+  min-height: 1.4em;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.cartao-receita:focus-visible {
+  transform: translateY(-4px);
+}
+
+.receita-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.botao-acao {
+  border: 1px solid var(--borda);
+  background: var(--bege-cartao);
+  color: var(--vinho);
+  font-family: var(--fonte-corpo);
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.botao-acao:hover {
+  border-color: var(--salvia);
+  background: #fff;
+}
+
+.aviso-acao {
+  font-size: 0.82rem;
+  color: var(--salvia-escuro);
+}
+
+/* Ingredientes marcáveis */
+.lista-ingredientes li {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.lista-ingredientes li::before {
+  content: none;
+}
+
+.lista-ingredientes label {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--borda);
+  cursor: pointer;
+}
+
+.lista-ingredientes input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  border: 2px solid var(--salvia);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.lista-ingredientes input::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--salvia);
+  transform: scale(0);
+  transition: transform 0.15s ease;
+}
+
+.lista-ingredientes input:checked::after {
+  transform: scale(1);
+}
+
+.lista-ingredientes input:checked + span {
+  color: var(--texto-suave);
+  text-decoration: line-through;
+}
+
+.nota-lista {
+  margin: 16px 0 0;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.receita-navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 60px;
+}
+
+.receita-vizinha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 48%;
+  padding: 14px 20px;
+  background: var(--bege-cartao);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.receita-vizinha:hover {
+  border-color: var(--salvia);
+}
+
+.receita-vizinha small {
+  color: var(--salvia-escuro);
+  font-size: 0.78rem;
+}
+
+.receita-vizinha span {
+  font-family: var(--fonte-titulo);
+  color: var(--vinho-escuro);
+}
+
+.receita-vizinha.proxima {
+  margin-left: auto;
+  text-align: right;
+}
+
+.cartao-corpo h3,
+.receita-info h1 {
+  overflow-wrap: anywhere;
+}
+
+/* Menu mobile ancorado ao cabeçalho (não depende da altura fixa) */
+@media (max-width: 680px) {
+  .navegacao {
+    position: absolute;
+    top: 100%;
+  }
+
+  .receita-vizinha {
+    max-width: 100%;
+  }
+
+  .receita-navegacao {
+    flex-direction: column;
+  }
+
+  .receita-meta {
+    flex-wrap: wrap;
+    gap: 18px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Impressão: só a receita, sem cabeçalho, botões e rodapé */
+@media print {
+  .cabecalho,
+  .rodape,
+  .trilha,
+  .receita-acoes,
+  .receita-navegacao,
+  .pular-conteudo,
+  .nota-lista {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .receita-topo,
+  .receita-conteudo {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .receita-imagem {
+    max-height: 220px;
+  }
+
+  .lista-modo li,
+  .lista-ingredientes li {
+    break-inside: avoid;
+  }
+}
+
+
+/* =========================================================
+   Páginas separadas: Início, Receitas, Dicas e Sobre
+   ========================================================= */
+
+.hero-compacto {
+  padding: 56px 0 40px;
+}
+
+.hero-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.botao-primario,
+.botao-secundario {
+  display: inline-block;
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--vinho);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-primario {
+  background: var(--vinho);
+  color: var(--bege-cartao);
+}
+
+.botao-primario:hover {
+  background: var(--vinho-escuro);
+  transform: translateY(-2px);
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--vinho);
+}
+
+.botao-secundario:hover {
+  background: var(--vinho-suave);
+  transform: translateY(-2px);
+}
+
+/* Destaques na página inicial */
+.secao-destaques {
+  padding-bottom: 56px;
+}
+
+.secao-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.secao-cabecalho h2 {
+  font-size: 1.7rem;
+}
+
+.ver-todas {
+  color: var(--vinho);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-bottom: 1px solid transparent;
+}
+
+.ver-todas:hover {
+  border-color: var(--dourado);
+}
+
+.faixa-dicas {
+  background: var(--bege-cartao);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  padding: 44px 0;
+}
+
+.faixa-dicas .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.faixa-dicas h2 {
+  font-size: 1.5rem;
+}
+
+.faixa-dicas p {
+  margin: 8px 0 0;
+  max-width: 560px;
+  color: var(--texto-suave);
+}
+
+/* Aba Dicas */
+.grade-dicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.cartao-dica {
+  background: var(--bege-cartao);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--dourado);
+  border-radius: 14px;
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cartao-dica h3 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.cartao-dica p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+/* Sobre */
+.pagina-texto {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 60px;
+  max-width: 860px;
+}
+
+.pagina-texto p {
+  margin: 0 0 16px;
+  font-size: 1.02rem;
+}
+
+.pagina-texto a:not(.botao-primario) {
+  color: var(--vinho);
+  border-bottom: 1px solid var(--dourado);
+}
+
+.sobre-logo {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--dourado-claro);
+}
+
+.trilha a {
+  color: var(--vinho);
+}
+
+.trilha a:hover {
+  text-decoration: underline;
+}
+
+.rodape-links a {
+  color: rgba(230, 205, 154, 0.8);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 680px) {
+  .pagina-texto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .faixa-dicas .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .secao-cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .rodape-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Instagram no rodapé */
+.rodape-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(230, 205, 154, 0.45);
+  color: var(--dourado-claro);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.rodape-instagram:hover {
+  background: var(--dourado-claro);
+  color: var(--vinho-escuro);
+  transform: translateY(-2px);
+}
+
+/* História na página inicial */
+.secao-historia {
+  padding: 8px 0 56px;
+}
+
+.secao-historia .container {
+  max-width: 760px;
+}
+
+.secao-historia h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.secao-historia p {
+  margin: 0 0 16px;
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.historia-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px !important;
+}
+
+
+/* =========================================================
+   Acabamento visual
+   ========================================================= */
+
+::selection { background: var(--dourado-claro); color: var(--vinho-escuro); }
+
+.cabecalho { box-shadow: 0 6px 18px -14px rgba(76, 21, 36, 0.5); }
+
+/* Hero com fundo suave e logo em destaque */
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200, 161, 94, 0.22), transparent 42%),
+    radial-gradient(circle at 88% 80%, rgba(138, 154, 110, 0.22), transparent 45%),
+    linear-gradient(180deg, var(--bege-cartao), var(--bege));
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: 48px;
+  animation: subir 0.7s ease both;
+}
+
+.hero::after { margin-bottom: -2px; }
+
+.hero-logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--dourado-claro);
+  box-shadow: 0 12px 28px -14px rgba(76, 21, 36, 0.6);
+}
+
+.hero-selo {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 5px 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--salvia-escuro);
+  background: rgba(138, 154, 110, 0.16);
+  border-radius: 999px;
+}
+
+.hero h1 { text-wrap: balance; }
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .cartao-receita, .diferencial, .cartao-dica { animation: none !important; transition: none !important; }
+}
+
+/* Títulos de seção com filete dourado */
+.titulo-centro {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.titulo-centro::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--dourado);
+  border-radius: 2px;
+}
+
+/* Diferenciais */
+.secao-diferenciais,
+.valores { padding-bottom: 56px; }
+
+.grade-diferenciais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.diferencial {
+  background: var(--bege-cartao);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 26px 22px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diferencial:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -20px rgba(76, 21, 36, 0.5);
+}
+
+.diferencial-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  background: var(--vinho-suave);
+  border: 1px solid var(--borda);
+}
+
+.diferencial h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.diferencial p { margin: 0; font-size: 0.93rem; color: var(--texto-suave); }
+
+/* História com aspas decorativas */
+.secao-historia .container {
+  position: relative;
+  background: var(--bege-cartao);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  padding: 44px 48px;
+  box-shadow: 0 20px 40px -32px rgba(76, 21, 36, 0.5);
+}
+
+.secao-historia .container::before {
+  content: "“";
+  position: absolute;
+  top: -6px;
+  left: 26px;
+  font-family: var(--fonte-titulo);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--dourado);
+  opacity: 0.55;
+}
+
+.secao-historia h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--dourado);
+  border-radius: 2px;
+}
+
+/* Faixa de dicas mais marcante */
+.faixa-dicas {
+  background: linear-gradient(135deg, var(--vinho), var(--vinho-escuro));
+  border: none;
+  color: var(--bege-cartao);
+}
+
+.faixa-dicas h2 { color: var(--bege-cartao); }
+.faixa-dicas p { color: rgba(251, 247, 238, 0.82); }
+.faixa-dicas .botao-primario { background: var(--dourado); border-color: var(--dourado); color: var(--vinho-escuro); }
+.faixa-dicas .botao-primario:hover { background: var(--dourado-claro); border-color: var(--dourado-claro); }
+
+/* Cartões de receita e dicas */
+.cartao-receita .cartao-imagem img { transition: transform 0.4s ease; }
+.cartao-receita:hover .cartao-imagem img { transform: scale(1.06); }
+
+.cartao-dica { position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; animation: subir 0.5s ease both; }
+.cartao-dica:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -20px rgba(76, 21, 36, 0.5); }
+
+.dica-icone {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 1.6rem;
+}
+
+/* Botões e rodapé */
+.botao-primario { box-shadow: 0 8px 18px -10px rgba(76, 21, 36, 0.7); }
+
+.rodape {
+  background: linear-gradient(180deg, var(--vinho-escuro), #3a101c);
+  border-top: 4px solid var(--dourado);
+  margin-top: 56px;
+}
+
+@media (max-width: 680px) {
+  .secao-historia .container { padding: 36px 24px; }
+  .titulo-centro { font-size: 1.5rem; }
+}
+
+@media print {
+  .cabecalho, .rodape, .faixa-dicas, .hero { display: none !important; }
+}
+
+
+/* =========================================================
+   Mais vinho: detalhes de cor
+   ========================================================= */
+
+html { scrollbar-color: var(--vinho) var(--bege); }
+
+/* Faixa vinho no topo e menu */
+.cabecalho { border-top: 5px solid var(--vinho); }
+
+.navegacao a:hover,
+.navegacao a.ativo {
+  color: var(--vinho);
+  border-color: var(--vinho);
+}
+
+.marca-nome { color: var(--vinho); }
+
+/* Apresentação: título com destaque e ornamento vinho */
+.hero h1 { color: var(--vinho); }
+
+.hero::after {
+  width: 90px;
+  background: linear-gradient(90deg, var(--vinho) 0 40%, var(--dourado) 40% 60%, var(--vinho) 60% 100%);
+}
+
+.hero-logo { border-color: var(--vinho); box-shadow: 0 0 0 4px var(--dourado-claro), 0 14px 28px -14px rgba(76, 21, 36, 0.65); }
+
+.hero-selo {
+  color: var(--bege-cartao);
+  background: var(--vinho);
+  box-shadow: 0 6px 14px -8px rgba(76, 21, 36, 0.8);
+}
+
+/* Títulos de seção */
+.titulo-centro,
+.secao-historia h2 { color: var(--vinho); }
+
+.titulo-centro::after,
+.secao-historia h2::after {
+  width: 64px;
+  background: linear-gradient(90deg, var(--vinho) 0 45%, var(--dourado) 45% 55%, var(--vinho) 55% 100%);
+}
+
+/* Cartões com detalhe vinho */
+.cartao-receita { border-bottom: 3px solid var(--vinho); }
+.cartao-receita:hover .cartao-corpo h3 { color: var(--vinho); }
+
+.cartao-categoria {
+  color: var(--vinho);
+  background: var(--vinho-suave);
+  font-weight: 700;
+}
+
+.cartao-dica { border-top-color: var(--vinho); }
+.cartao-dica h3 { color: var(--vinho); }
+
+.diferencial { border-top: 3px solid var(--vinho); }
+.diferencial-icone { background: var(--vinho); border-color: var(--vinho); box-shadow: 0 8px 16px -10px rgba(76, 21, 36, 0.8); }
+.diferencial h3 { color: var(--vinho); }
+
+/* Filtros e busca */
+.filtro-chip:hover { border-color: var(--vinho); color: var(--vinho); }
+.busca input:focus { border-color: var(--vinho); outline: 2px solid rgba(107, 30, 51, 0.25); }
+
+/* História com barra vinho lateral */
+.secao-historia .container { border-left: 6px solid var(--vinho); }
+.secao-historia .container::before { color: var(--vinho); opacity: 0.35; }
+
+/* Faixa de dicas: textura de listras sutis */
+.faixa-dicas {
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 14px, transparent 14px 28px),
+    linear-gradient(135deg, var(--vinho), var(--vinho-escuro));
+  border-top: 4px solid var(--dourado);
+  border-bottom: 4px solid var(--dourado);
+}
+
+/* Página de receita */
+.receita-categoria { color: var(--bege-cartao); background: var(--vinho); padding: 4px 14px; border-radius: 999px; }
+.receita-info h1 { color: var(--vinho); }
+
+.receita-meta { border-color: var(--vinho); }
+.receita-meta strong { color: var(--vinho); }
+
+.bloco-titulo { color: var(--vinho); }
+.bloco-titulo::after { background: var(--vinho); }
+
+.lista-ingredientes li::before { background: var(--vinho); }
+.lista-ingredientes input[type="checkbox"] { accent-color: var(--vinho); }
+
+.dica { border-left-color: var(--vinho); background: rgba(107, 30, 51, 0.1); }
+
+.receita-vizinha { border-left: 4px solid var(--vinho); }
+.receita-vizinha:hover { background: var(--vinho-suave); }
+
+.botao-acao { color: var(--bege-cartao); background: var(--vinho); border-color: var(--vinho); }
+.botao-acao:hover { background: var(--vinho-escuro); border-color: var(--vinho-escuro); }
+
+.trilha a, .ver-todas, .pagina-texto a:not(.botao-primario) { color: var(--vinho); }
+
+/* Rodapé: vinho profundo com marca dourada */
+.rodape-marca { color: var(--dourado-claro); }
+.rodape-instagram { background: var(--vinho); border-color: var(--dourado); }
+
+
+/* =========================================================
+   RESPONSIVIDADE (celular, tablet, notebook, monitores grandes)
+   ========================================================= */
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+img, svg, video { max-width: 100%; height: auto; }
+h1, h2, h3, p, li, .marca-nome { overflow-wrap: anywhere; }
+
+/* Margens laterais fluidas + área segura (notch) */
+.container {
+  padding-left: max(clamp(16px, 4vw, 24px), env(safe-area-inset-left));
+  padding-right: max(clamp(16px, 4vw, 24px), env(safe-area-inset-right));
+}
+
+/* Havia sobrescrita do espaçamento lateral nestas seções */
+.receita-topo,
+.receita-conteudo,
+.receita-navegacao {
+  padding-left: max(clamp(16px, 4vw, 24px), env(safe-area-inset-left));
+  padding-right: max(clamp(16px, 4vw, 24px), env(safe-area-inset-right));
+}
+
+.cabecalho { padding-top: env(safe-area-inset-top); }
+.rodape { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
+
+/* ---------- Monitores grandes: escala o conteúdo ---------- */
+@media (min-width: 1440px) {
+  html { font-size: 106.25%; }
+  .container { max-width: 1240px; }
+}
+
+@media (min-width: 1920px) {
+  html { font-size: 118.75%; }
+  .container { max-width: 1400px; }
+}
+
+@media (min-width: 2400px) {
+  html { font-size: 137.5%; }
+  .container { max-width: 1600px; }
+}
+
+/* ---------- Notebook / tablet horizontal ---------- */
+@media (max-width: 1024px) {
+  .grade-receitas { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 22px; }
+  .navegacao { gap: 22px; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 860px) {
+  .hero { padding: 56px 0 44px; }
+  .secao-historia .container { padding: 36px 32px; }
+  .receita-topo { align-items: start; }
+  .receita-imagem { max-height: 420px; }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 680px) {
+  .cabecalho .container { gap: 12px; }
+
+  .navegacao {
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+    box-shadow: 0 18px 26px -18px rgba(76, 21, 36, 0.55);
+  }
+
+  .navegacao a { padding: 10px 0; font-size: 1.02rem; }
+
+  .hero { padding: 44px 0 36px; margin-bottom: 36px; }
+  .hero-logo { width: 80px; height: 80px; }
+  .hero-selo { font-size: 0.7rem; letter-spacing: 0.06em; }
+  .hero-acoes { flex-direction: column; align-items: center; }
+  .hero-acoes a { width: min(100%, 320px); text-align: center; }
+
+  /* Card da história respeita as margens da tela */
+  .secao-historia .container {
+    width: calc(100% - 32px);
+    padding: 36px 22px;
+    border-radius: 16px;
+  }
+  .historia-acoes a { width: min(100%, 320px); text-align: center; }
+
+  .faixa-dicas { padding: 36px 0; }
+  .faixa-dicas .botao-primario { width: min(100%, 320px); text-align: center; }
+
+  .grade-receitas,
+  .grade-dicas { grid-template-columns: 1fr; gap: 18px; }
+
+  .receita-topo { gap: 20px; padding-top: 18px; padding-bottom: 28px; }
+  .receita-imagem { max-height: 280px; }
+  .receita-conteudo { gap: 32px; padding-bottom: 48px; }
+  .receita-meta { gap: 14px 22px; }
+  .receita-vizinha,
+  .receita-vizinha.proxima { align-self: stretch; margin-left: 0; max-width: 100%; text-align: left; }
+
+  .rodape .container { gap: 14px; }
+  .rodape-links { gap: 6px 4px; }
+}
+
+/* ---------- Celulares pequenos (320–360px) ---------- */
+@media (max-width: 360px) {
+  .marca img { width: 42px; height: 42px; }
+  .marca-nome { font-size: 1rem; }
+  .marca-nome span { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .hero h1 { font-size: 1.85rem; }
+  .filtro-chip { padding: 8px 14px; }
+  .secao-historia .container { padding: 30px 18px; }
+}
+
+/* ---------- Celular deitado (pouca altura) ---------- */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { padding: 28px 0 24px; margin-bottom: 24px; }
+  .hero-logo { display: none; }
+}
+
+/* ---------- Toque: alvos de pelo menos 44px, sem "hover" preso ---------- */
+@media (pointer: coarse) {
+  .menu-botao { min-width: 44px; min-height: 44px; }
+  .navegacao a { display: inline-flex; align-items: center; min-height: 44px; padding-top: 0; padding-bottom: 0; }
+  .filtro-chip { min-height: 44px; }
+  .botao-acao { min-height: 44px; padding-left: 22px; padding-right: 22px; }
+  .botao-primario, .botao-secundario { min-height: 44px; }
+  .busca input { min-height: 46px; font-size: 1rem; } /* 16px evita o zoom automático no iPhone */
+  .busca-limpar { width: 40px; height: 40px; }
+  .ver-todas, .trilha a, .rodape-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .trilha { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; }
+  .lista-ingredientes label { min-height: 44px; display: flex; align-items: center; }
+  .rodape-instagram { width: 48px; height: 48px; }
+}
+
+@media (hover: none) {
+  .cartao-receita:hover,
+  .cartao-dica:hover,
+  .diferencial:hover,
+  .botao-primario:hover,
+  .botao-secundario:hover,
+  .rodape-instagram:hover { transform: none; }
+  .cartao-receita:hover .cartao-imagem img { transform: none; }
+}
+
+@media (pointer: coarse) {
+  .rodape-links a { padding-left: 10px; padding-right: 10px; }
+}
+
+
+/* =========================================================
+   Foto da receita ampliável (lightbox)
+   ========================================================= */
+.receita-imagem { position: relative; }
+
+.receita-imagem-botao {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+}
+
+.receita-imagem-botao:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: -3px;
+}
+
+.receita-imagem-lupa {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(76, 21, 36, 0.82);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transition: background 0.2s ease;
+}
+
+.receita-imagem-botao:hover .receita-imagem-lupa { background: var(--vinho); }
+
+.foto-ampliada {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  background: rgba(30, 10, 16, 0.96);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.foto-ampliada.aberta { opacity: 1; }
+
+.foto-ampliada-palco {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.foto-ampliada-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+}
+
+.foto-ampliada-fechar {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  right: 12px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--vinho-escuro);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.foto-ampliada-fechar:hover { background: var(--dourado-claro); }
+.foto-ampliada-fechar:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; }
+
+.foto-ampliada-legenda {
+  margin: 0;
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foto-ampliada { transition: none; }
+}
+
+@media print {
+  .foto-ampliada, .receita-imagem-lupa { display: none !important; }
+}
+
+
+/* =========================================================
+   Galeria: mais de uma foto por receita
+   ========================================================= */
+
+/* Caixa que agrupa a foto grande e a faixa de miniaturas. "min-width: 0" deixa a
+   faixa rolar para o lado em vez de alargar a página. */
+.receita-galeria { min-width: 0; }
+
+/* Faixa de miniaturas abaixo da foto grande; rola para o lado se tiver muitas fotos. */
+.receita-miniaturas {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 2px 2px 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.receita-miniaturas[hidden] { display: none; }
+
+.miniatura {
+  flex: 0 0 auto;
+  width: 88px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid var(--borda);
+  border-radius: 10px;
+  background: var(--vinho-suave);
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.miniatura img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.miniatura:hover { opacity: 1; }
+.miniatura:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; }
+
+/* Miniatura da foto que está aparecendo agora. */
+.miniatura[aria-current="true"] {
+  border-color: var(--vinho);
+  opacity: 1;
+}
+
+/* Contador "1 / 3" no canto da foto grande. */
+.receita-imagem-contador {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(76, 21, 36, 0.82);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.receita-imagem-contador[hidden] { display: none; }
+
+/* Setas ‹ › da foto ampliada. */
+.foto-ampliada-seta {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--vinho-escuro);
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0 0 4px;
+  cursor: pointer;
+}
+
+.foto-ampliada-seta.anterior { left: 12px; }
+.foto-ampliada-seta.proxima { right: 12px; }
+.foto-ampliada-seta:hover { background: var(--dourado-claro); }
+.foto-ampliada-seta:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; }
+
+/* Contador "2 / 4" da foto ampliada. */
+.foto-ampliada-contador {
+  margin: 0;
+  color: var(--dourado-claro);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 680px) {
+  .miniatura { width: 72px; }
+  .foto-ampliada-seta { width: 40px; height: 40px; font-size: 1.7rem; }
+  .foto-ampliada-seta.anterior { left: 6px; }
+  .foto-ampliada-seta.proxima { right: 6px; }
+}
+
+@media print {
+  .receita-miniaturas, .receita-imagem-contador { display: none !important; }
+}
+
+/* Subtítulos "Massa" e "Recheio" dentro da lista de ingredientes */
+.subtitulo-ingredientes {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--vinho);
+  margin: 20px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--dourado);
+}
+
+.subtitulo-ingredientes:first-of-type {
+  margin-top: 8px;
+}

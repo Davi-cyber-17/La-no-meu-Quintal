@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Lá no meu Quintal — blog de receitas</title>
+<meta name="description" content="Receitas de família, feitas com o que tem no quintal e na cozinha de casa." />
+<meta name="theme-color" content="#6b1e33" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lá no meu Quintal — blog de receitas" />
+<meta property="og:description" content="Receitas de família, feitas com o que tem no quintal e na cozinha de casa." />
+<meta property="og:image" content="assets/logo.jpeg" />
+<link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+<a href="#historia" class="pular-conteudo">Pular para a nossa história</a>
+
+<header class="cabecalho">
+  <div class="container">
+    <a href="index.html" class="marca">
+      <img src="assets/logo.jpeg" alt="Logo Lá no meu Quintal" width="52" height="52" />
+      <span class="marca-nome">Lá no meu Quintal<span>BLOG DE RECEITAS</span></span>
+    </a>
+    <button class="menu-botao" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">☰</button>
+    <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ativo" aria-current="page">Início</a>
+      <a href="receitas.html">Receitas</a>
+      <a href="dicas.html">Contos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <img src="assets/logo.jpeg" alt="" width="96" height="96" class="hero-logo" />
+      <span class="hero-selo">Frase:</span>
+      <h1>Frase sobre o Site:</h1>
+      <p>Frase Familia:</p>
+      <div class="hero-acoes">
+        <a href="receitas.html" class="botao-primario">Ver todas as receitas</a>
+        <a href="dicas.html" class="botao-secundario">Contos de casa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao-diferenciais" aria-labelledby="tituloDif">
+    <div class="container">
+      <h2 class="titulo-centro" id="tituloDif">O que você encontra aqui</h2>
+      <div class="grade-diferenciais">
+        <article class="diferencial">
+          <span class="diferencial-icone" aria-hidden="true">🥣</span>
+          <h3>Receitas de verdade</h3>
+          <p>Ingredientes com medidas caseiras e passo a passo simples, do jeito que a gente faz em casa.</p>
+        </article>
+        <article class="diferencial">
+          <span class="diferencial-icone" aria-hidden="true">🔎</span>
+          <h3>Busca fácil</h3>
+          <p>Procure pelo nome ou por um ingrediente que você já tem na despensa e filtre por categoria.</p>
+        </article>
+        <article class="diferencial">
+          <span class="diferencial-icone" aria-hidden="true">🌿</span>
+          <h3>Contos da casa</h3>
+          <p>Truques de cozinha, conservação e quintal para aproveitar melhor cada ingrediente.</p>
+        </article>
+        <article class="diferencial">
+          <span class="diferencial-icone" aria-hidden="true">🖨️</span>
+          <h3>Pronto para imprimir</h3>
+          <p>Cada receita tem lista de ingredientes marcável e botão de imprimir ou compartilhar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao-historia" id="historia" aria-labelledby="tituloHistoria">
+    <div class="container">
+      <h2 id="tituloHistoria">Nossa história</h2>
+      <p>Criar Historia para colocar <strong>Aqui:</strong></p>
+      <p class="historia-acoes">
+        <a href="receitas.html" class="botao-primario">Ver as receitas</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="faixa-dicas" aria-labelledby="tituloFaixaDicas">
+    <div class="container">
+      <div>
+        <h2 id="tituloFaixaDicas">Truques de cozinha e de quintal</h2>
+        <p>Pequenos segredos que fazem diferença no dia a dia — da conservação dos temperos ao ponto certo do bolo.</p>
+      </div>
+      <a href="dicas.html" class="botao-primario">Abrir a aba Contos</a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <div>
+      <div class="rodape-marca">Lá no meu Quintal</div>
+      <p>Receitas de família, um prato de cada vez.</p>
+    </div>
+    <div class="rodape-links">
+      <a href="index.html">Início</a>
+      <a href="receitas.html">Receitas</a>
+      <a href="dicas.html">Contos</a>
+    </div>
+    <a href="https://www.instagram.com/lanomeuquintaloficial/" class="rodape-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre em nova aba)" title="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <p>&copy; <span id="ano">2026</span> Lá no meu Quintal. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
